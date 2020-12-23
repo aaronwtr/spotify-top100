@@ -20,7 +20,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 '''' 
-MADE BY: Aaron Wenteler ( https://github.com/aaronwtr ) ranking_tracks_and_create_playlist_original.py
+MADE BY: Aaron Wenteler ( https://github.com/aaronwtr )
 DATE: 23-12-2020
 LICENSE: GNU General Public License. Can be commercially redistributed under explicit mention of original work and 
 making public of any additions and/or modifications. Free of charge for personal use. 
