@@ -46,11 +46,11 @@ def main():
 
 
 def get_token():
-    '''
+    """
     Your client ID and client secret key are used to get a token.
     If both your credentials were legitimate, you will get and return a valid token.
     You can get a correct token through: https://developer.spotify.com/console/post-playlists/
-    '''
+    """
 
     token = '{{TOKEN}}'
 
@@ -58,11 +58,12 @@ def get_token():
 
 
 def find_release_date(album):
-    '''
+    """
     This function uses the Spotify Web API in combination with spotipy to obtain the data of the input album that
     corresponds to a particular song. When the album has been found, the release date of the album will be appended to
     be added to the final dataframe.
-    '''
+    """
+
     album_name = spotify.search(q=album, limit=1, type='album')
     album_name = album_name['albums']
     album_name = album_name['items']
@@ -75,10 +76,10 @@ def find_release_date(album):
 
 
 def proccessing_views(playlist):
-    '''
-	In this function, the views which is imported as a string, is converted to a float so that calculations can be
-	performed based on the amount of views.
-	'''
+    """
+    In this function, the views which is imported as a string, is converted to a float so that calculations can be
+    performed based on the amount of views.
+    """
 
     playlist_raw = playlist.loc[:, ~playlist.columns.str.contains('^Unnamed')]
 
