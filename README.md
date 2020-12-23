@@ -1,4 +1,4 @@
-# Spotify Top 100 Generator 
+# Spotify Playlist Top 100 Generator 
 The following scripts parses through your own playlist(s) and extracts the most popular songs based on popularity data from Spotify and Genius. This includes ranking where the most popular song will be placed on top of the playlist followed by the rest of the songs in the descending popularity. If you want to extract the 100 (or any other number) most popular tracks from your favorite playlist, this script can help you out! A few modifications are needed to make it work in your personal environment.
 
 # Initialization 
