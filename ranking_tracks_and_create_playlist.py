@@ -4,12 +4,12 @@ import spotipy
 import json
 import requests
 
-'''' 
+"""
 MADE BY: Aaron Wenteler ( https://github.com/aaronwtr ) ranking_tracks_and_create_playlist_original.py
 DATE: 23-12-2020
 LICENSE: GNU General Public License. Can be commercially redistributed under explicit mention of original work and 
 making public of any additions and/or modifications. Free of charge for personal use. 
-'''
+"""
 
 CLI_ID = '{{CLIENT ID}}'  # Your client id
 CLI_KEY = '{{CLIENT KEY}}'  # Your client key
