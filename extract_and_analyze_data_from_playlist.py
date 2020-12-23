@@ -98,7 +98,7 @@ def write_playlist(username, uri, mode):
 
 def write_txt(username, filename, tracks):
     """
-    ADD PLAYLIST INFP TO TXT FILE
+    ADD PLAYLIST INFO TO TXT FILE
     View the playlist information data structure if this is confusing!
     Specify the destination file path and check if the file exists already. If the file exists and you selected to not
     overwrite, the program will end here.
