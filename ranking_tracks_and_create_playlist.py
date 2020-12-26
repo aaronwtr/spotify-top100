@@ -39,6 +39,8 @@ def main():
 
     ranked_playlist = unranked_playlist.sort_values('rank_factor', ascending=False)
     ranked_playlist.reset_index(drop=True, inplace=True)
+    
+    ranked_playlist = reduce_artists(ranked_playlist)
 
     playlist_idd = make_playlist(username, ranked_playlist)
 
@@ -116,6 +118,40 @@ def calculate_rank(popularity, views, date_data):
                     max(rank_factor_tempp) - min(rank_factor_tempp)) * 100, 3))
 
     return rank_factor
+
+
+def reduce_artists(playlist, num_songs=6):
+    """
+    :param playlist: The ranked playlist
+    :param artists: All the artists that appear in the playlist
+    :param num_songs: The maximum number of songs per artist you want to allow to occur in your playlist
+    :return: Playlist that only contains num_songs songs per artist
+    """
+    ranked_playlist = playlist.loc[:, ~playlist.columns.str.contains('^Unnamed')]
+
+    artists_temp = list(ranked_playlist['artist'])
+    artists = []
+
+    for artist in artists_temp:
+        if artist not in artists:
+            artists.append(artist)
+
+    indices = []
+
+    for artist in artists:
+        count = 0
+        for i in range(len(artists_temp)):
+            if artist == artists_temp[i]:
+                count += 1
+            if artist == artists_temp[i] and count >= 7:
+                indices.append(i)
+
+    indices.sort()
+
+    ranked_playlist = ranked_playlist.drop(ranked_playlist.index[indices])
+    ranked_playlist.reset_index(drop=True, inplace=True)
+
+    return ranked_playlist
 
 
 def make_playlist(user, playlist):
