@@ -144,7 +144,7 @@ def reduce_artists(playlist, num_songs=6):
         for i in range(len(artists_temp)):
             if artist == artists_temp[i]:
                 count += 1
-            if artist == artists_temp[i] and count >= 7:
+            if artist == artists_temp[i] and count >= num_songs + 1:
                 indices.append(i)
 
     indices.sort()
