@@ -125,7 +125,8 @@ def reduce_artists(playlist, num_songs=6):
     :param playlist: The ranked playlist
     :param artists: All the artists that appear in the playlist
     :param num_songs: The maximum number of songs per artist you want to allow to occur in your playlist
-    :return: Playlist that only contains num_songs songs per artist
+    :return: Playlist that only contains num_songs songs per artist. Note that featurings aren't included and so the
+    artist could still appear on more songs than this selection. 
     """
     ranked_playlist = playlist.loc[:, ~playlist.columns.str.contains('^Unnamed')]
 
