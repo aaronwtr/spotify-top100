@@ -15,6 +15,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver import ActionChains
 from selenium.common.exceptions import JavascriptException
 from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import ElementNotInteractableException
 from tqdm import tqdm
 from webdriver_manager.chrome import ChromeDriverManager
 
@@ -271,7 +272,7 @@ def scrape_genius(playlist_dataframe):
 
                 action.double_click(clickable).perform()
 
-            except (TimeoutError, JavascriptException, TimeoutException):
+            except (TimeoutError, JavascriptException, TimeoutException, ElementNotInteractableException):
                 pass
 
             source = driver.page_source
