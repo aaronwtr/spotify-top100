@@ -6,6 +6,3 @@ The first step necessary is to make an account that links your Spotify account t
 
 # Using the program
 You will need to fill out some personal Spotify data and edit some parameters to get the script to work. Everything you have to fill in manually, is indicated by double curly brackets like this: {{PARAMETER}}. 
-
-# Help
-If you need any further help or assistance while running the code, or if you have feedback, I would love to hear it. Contact me via email: aaronwenteler@gmail.com
